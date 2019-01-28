@@ -1,0 +1,19 @@
+<h2>Heroes</h2>
+<input type="text" #name />
+<input
+  type="button"
+  value="click"
+  (click)="onClick(name.value); name.value = ''"
+/>
+
+<div>{{ completedTasks() }} out of {{ heroes.length }} tasks</div>
+
+<ul>
+  <li
+    *ngFor="let hero of heroes"
+    (click)="onSelect(hero)"
+    [class.selected]="hero.id == 1"
+  >
+    {{ hero.name }}
+  </li>
+</ul>
